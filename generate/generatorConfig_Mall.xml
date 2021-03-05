@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动包位置
+    <classPathEntry location="C:\Users\liqun\.m2\repository\mysql\mysql-connector-java\5.1.37\mysql-connector-java-5.1.37.jar" />-->
+    <!-- <classPathEntry location="C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar" />-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 实现自定义的代码生成器plugin -->
+        <plugin type="org.mybatis.generator.plugins.GenerateEntityPlugin" />
+        <!-- genenat entity时,生成toString -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <!-- generate entity时，生成hashcode和equals方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+        <!--<plugin type="org.mybatis.generator.plugins.PageLimitPlugin" />-->
+		<!-- genenat entity时,生成primarykey -->
+        <plugin type="org.mybatis.generator.plugins.PrimaryKeyPlugin" />
+		<!-- genenat entity时,生成bathInsert -->
+        <plugin type="org.mybatis.generator.plugins.BatchInsertPlugin" />
+        <!-- genenat entity时,生成bathUpdate -->
+        <plugin type="org.mybatis.generator.plugins.BatchUpdatePlugin" />
+        <!-- genenat entity时,生成bathDel -->
+        <plugin type="org.mybatis.generator.plugins.BatchDeletePlugin" />
+		<plugin type="org.mybatis.generator.plugins.UpdateByFiltersPlugin" />
+        <plugin type="org.mybatis.generator.plugins.DeleteByFiltersPlugin" />
+		<plugin type="org.mybatis.generator.plugins.UpdatePlusByFiltersPlugin" />
+        <plugin type="org.mybatis.generator.plugins.UpdatePlusByPrimaryKeyPlugin" />
+        <plugin type="org.mybatis.generator.plugins.UpdateSubtractByFiltersPlugin" />
+        <plugin type="org.mybatis.generator.plugins.UpdateSubtractByPrimaryKeyPlugin" />
+		<!--<plugin type="org.mybatis.generator.plugins.UpdateByFiltersPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.DeleteByFiltersPlugin" />-->
+		<!--<plugin type="org.mybatis.generator.plugins.UpdatePlusByFiltersPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.UpdatePlusByPrimaryKeyPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.UpdateSubtractByFiltersPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.UpdateSubtractByPrimaryKeyPlugin" />-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://123.56.194.146:3001/test_mall_dev" userId="lechundbuser" password="UIOP!@#$LechuN">
+            <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="msa" password="msa">-->
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="cc.lechun.mall.entity" targetProject="../mall.service/src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+            <property name="rewrite" value="true"></property>
+        </javaModelGenerator>
+        <!-- 生成的映射文件包名和位置 -->
+        <sqlMapGenerator targetPackage="mall.autogenerate" targetProject="../mall.service/src/main/resources/map">
+            <property name="enableSubPackages" value="true" />
+            <property name="mergeable" value="false"></property>
+            <property name="rewrite" value="true"></property>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cc.lechun.mall.dao" targetProject="../mall.service/src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="rewrite" value="false"></property>
+        </javaClientGenerator>
+		<javaServiceGenerator targetPackage="cc.lechun.mall.iservice" targetProject="../mall.service/src/main/java"
+                              implementationPackage="cc.lechun.mall.service">
+        </javaServiceGenerator>
+        <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+<!--        <table tableName="t_mall_template_subcript_config" domainObjectName="weixin.MallTemplateMessageSubcriptConfig"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_questionnew" domainObjectName="ask.MallQuestionnew" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_answer" domainObjectName="ask.MallAnswer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_active_questionnaire_statistics" domainObjectName="ask.QuestionnaireStatistics" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_answer" domainObjectName="ask.MallCustomerAnswer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+
+        <!--<table tableName="t_mall_order" domainObjectName="trade.MallOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_main" domainObjectName="trade.MallOrderMain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_weixin_base" domainObjectName="weixin.WeiXinBase" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_paytype" domainObjectName="trade.MallPayType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    -->
+        <!--<table tableName="t_mall_customer_product_category" domainObjectName="sales.CustomerProductCategory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_sys_warehouse_area" domainObjectName="sales.WarehouseArea" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_product_category" domainObjectName="sales.MallProductCategory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_sys_product" domainObjectName="sales.MallProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_sys_product_line" domainObjectName="sales.MallProductLine" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--        <table tableName="t_sys_product_group" domainObjectName="sales.MallProductGroup" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_sys_group_product" domainObjectName="sales.MallGroupProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!-- <table tableName="t_mall_platform_paytype" domainObjectName="trade.MallPlatformPayType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_promotion" domainObjectName="sales.MallPromotion" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_promotion_buy" domainObjectName="sales.MallPromotionBuy" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_promotion_product" domainObjectName="sales.MallPromotionProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_promotion_time" domainObjectName="sales.MallPromotionTime" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_shoppingcart" domainObjectName="shoppingcart.MallShoppingcart" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_free" domainObjectName="sales.MallFree" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_free_product" domainObjectName="sales.MallFreeProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_free_rule" domainObjectName="sales.MallFreeRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_regular" domainObjectName="sales.MallRegular" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_regular_product" domainObjectName="sales.MallRegularProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_sale_recommend" domainObjectName="sales.MallSaleRecommend" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+        <!--<table tableName="t_mall_customer_vip" domainObjectName="vip.MallVip" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_condition" domainObjectName="vip.MallVipCondition" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_log" domainObjectName="vip.MallVipLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_notice_template" domainObjectName="vip.MallVipNoticeTemplate" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_questionnaire_paper" domainObjectName="vip.MallVipQuestionnairePaper" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_rewards" domainObjectName="vip.MallVipRewards" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_rewards_relation" domainObjectName="vip.MallVipRewardsRelation" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_rights" domainObjectName="vip.MallVipRights" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_tasks" domainObjectName="vip.MallVipTasks" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_tasks_relation" domainObjectName="vip.MallVipTasksRelation" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_tasks_rewards" domainObjectName="vip.MallVipTasksRewards" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_vip_vipdaylog" domainObjectName="vip.MallVipdaylog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+
+        <!--<table tableName="t_mall_paytype" domainObjectName="trade.MallPayType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_pay" domainObjectName="trade.MallOrderPay" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_weixin_base" domainObjectName="weixin.WeiXinBase" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_weixin_keyword" domainObjectName="weixin.WeiXinKeyword" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_mall_weixin_media" domainObjectName="weixin.WeiXinMedia" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+      -->
+      <!--  <table tableName="t_mall_fullcut" domainObjectName="sales.MallFullcut" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_fullcut_detail" domainObjectName="sales.MallFullcutDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+         <table tableName="t_mall_shopping_rule" domainObjectName="shoppingcart.MallShoppingRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_sys_product_pic" domainObjectName="sales.MallProductPic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_deliver_freight" domainObjectName="deliver.MallDeliverFreight" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+
+        <!--图片-->
+       <!-- <table tableName="t_mall_image" domainObjectName="image.Image" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_image_type" domainObjectName="image.ImageType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        -->
+
+        <!--平台 平台组-->
+        <!--<table tableName="t_mall_platform_group" domainObjectName="platform.PlatFormGroup" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_platform" domainObjectName="platform.PlatForm" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        -->
+
+        <!--配置表-->
+        <!--<table tableName="t_mall_dictionary_type" domainObjectName="dictionary.DictionaryType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_dictionary" domainObjectName="dictionary.Dictionary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        -->
+
+        <!--<table tableName="t_mall_cashticket_customer" domainObjectName="cashticket.CashticketCustomer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_cashticket_batch" domainObjectName="cashticket.CashticketBatch" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--优惠劵-->
+        <!--<table tableName="t_mall_cashticket" domainObjectName="cashticket.Cashticket" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_batch" domainObjectName="cashticket.CashticketBatch" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_class" domainObjectName="cashticket.CashticketClass" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_customer" domainObjectName="cashticket.CashticketCustomer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_sendlog" domainObjectName="cashticket.CashticketSendLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_senduser" domainObjectName="cashticket.CashticketSendUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_user_info" domainObjectName="cashticket.CashticketUserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_batch_new_rule" domainObjectName="cashticket.CashticketBatchNewRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_cashticket_batch_new_rule_detail" domainObjectName="cashticket.CashticketBatchNewRuleDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        -->
+<!--        <table tableName="t_mall_customer_ad_cookie" domainObjectName="customer.CustomerAdCookie" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_openid" domainObjectName="customer.CustomerOpenid" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--用户-->
+        <!--<table tableName="t_mall_customer" domainObjectName="customer.Customer"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_customer_openid" domainObjectName="customer.CustomerOpenid" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_customer_address" domainObjectName="customer.CustomerAddress" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_customer_mobile" domainObjectName="customer.CustomerMobile" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_customer_safe_question" domainObjectName="customer.CustomerSafeQuestion" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_customer_info_detail" domainObjectName="customer.CustomerInfoDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        -->
+
+
+
+
+        <!--系统权限-->
+        <!--<table tableName="t_mall_sys_role" domainObjectName="user.MallRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_sys_resource" domainObjectName="user.MallResource" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_sys_user" domainObjectName="user.MallUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_sys_user_role" domainObjectName="user.MallUserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_mall_fullcut" domainObjectName="sales.MallFullcut" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_fullcut_detail" domainObjectName="sales.MallFullcutDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_sys_role_resource" domainObjectName="user.MallRoleResource" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+       <table tableName="t_mall_shopping_rule" domainObjectName="shoppingcart.MallShoppingRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+
+
+
+
+        <table tableName="t_sys_product_pic" domainObjectName="sales.MallProductPic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_deliver_freight" domainObjectName="deliver.MallDeliverFreight" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_sys_province" domainObjectName="deliver.MallProvince" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_sys_city" domainObjectName="deliver.MallCity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_sys_area" domainObjectName="deliver.MallArea" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_sys_sms_history" domainObjectName="sms.SmsHistory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+
+        -->
+        <!--<table tableName="t_mall_order_product" domainObjectName="trade.MallOrderProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+        <!--<table tableName="t_mall_order_pay" domainObjectName="trade.MallOrderPay" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_paytype" domainObjectName="trade.MallPayType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+        <!--<table tableName="t_mall_order_main" domainObjectName="trade.MallOrderMain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_promotion_product" domainObjectName="sales.MallPromotionProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_package_printrecord" domainObjectName="trade.MallOrderPackagePrintrecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_group_product" domainObjectName="trade.MallOrderGroupProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_record" domainObjectName="trade.MallOrderRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_sync_info" domainObjectName="trade.MallOrderSyncInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_build_page" domainObjectName="item.BuildPage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_index_item" domainObjectName="item.IndexItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_index_nav" domainObjectName="item.IndexNav" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+        <!--<table tableName="t_mall_deliver_config" domainObjectName="deliver.MallDeliverConfig" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_deliver_config_class" domainObjectName="deliver.MallDeliverConfigClass" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_deliver_config_detail" domainObjectName="deliver.MallDeliverConfigDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_deliver_config_times" domainObjectName="deliver.MallDeliverConfigTimes" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_deliver_config_times_city" domainObjectName="deliver.MallDeliverConfigTimesCity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+        <!--<table tableName="t_mall_platform" domainObjectName="platform.PlatForm" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_cache" domainObjectName="trade.MallOrderCache" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--
+        <table tableName="t_mall_refund" domainObjectName="trade.MallRefund" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_refund_detail" domainObjectName="trade.MallRefundDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_refund_pay_detail" domainObjectName="trade.MallRefundPayDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_refund_record" domainObjectName="trade.MallRefundRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_mall_message_config" domainObjectName="weixin.MallMessageConfig" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_template_message" domainObjectName="weixin.MallTemplateMessage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_template_message_log" domainObjectName="weixin.MallTemplateMessageLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_mall_white_list" domainObjectName="weixin.MallWhiteList" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_black_list" domainObjectName="weixin.MallBlackList" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_mall_order_plan" domainObjectName="weixin.MallOrderPlan" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_order_plan_message" domainObjectName="weixin.MallOrderPlanMessage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_order_plan_product" domainObjectName="weixin.MallOrderPlanProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        -->
+<!--
+        <table tableName="t_mall_build_page" domainObjectName="item.BuildPage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+-->
+
+      <!--  <table tableName="t_mall_scrollpic" domainObjectName="scrollpic.MallScrollPic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_scrollpic_detail" domainObjectName="scrollpic.MallScrollPicDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+-->
+     <!-- <table tableName="t_mall_evaluate_order" domainObjectName="evaluate.EvaluateOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_evaluate_order_product" domainObjectName="evaluate.EvaluateOrderProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_mall_deliver_config_times" domainObjectName="deliver.MallDeliverConfigTimes" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="DELIVER_CONFIG_TIMES_ID" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_mall_deliver_config_times_city" domainObjectName="deliver.MallDeliverConfigTimesCity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+-->
+<!--        <table tableName="t_mall_weixin_group" domainObjectName="weixin.WeiXinGroup" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--
+        <table tableName="t_mall_weixin_group_user_ref" domainObjectName="weixin.WeiXinGroupUserRef" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        <table tableName="t_mall_weixin_group" domainObjectName="weixin.WeiXinGroup" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_weixin_menu" domainObjectName="weixin.WeiXinMenu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_weixin_message_send" domainObjectName="weixin.WeiXinMessageSend" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+        -->
+        <!--<table tableName="t_mall_message_config" domainObjectName="weixin.MallMessageConfig" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_template_message" domainObjectName="weixin.TemplateMessage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_template_message_remain" domainObjectName="weixin.MessageRemain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_status_log" domainObjectName="trade.MallOrderStatusLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_product_sales" domainObjectName="sales.MallProductSales" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_message" domainObjectName="weixin.MallOrderMessage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_send_msg" domainObjectName="trade.MallOrderSendMsg" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_express" domainObjectName="trade.MallOrderExpress" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_deliver" domainObjectName="deliver.MallDeliver" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_online" domainObjectName="customer.CustomerOnline" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_update_history" domainObjectName="trade.MallOrderUpdateHistory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_update_history_product" domainObjectName="trade.MallOrderUpdateHistoryProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+            &lt;!&ndash; 指定列生成什么类型，可以解决让text类型的字段不再生成EntityWithBlobs &ndash;&gt;
+            <columnOverride column="OLD_VALUE_GROUP" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="OLD_VALUE_PRODUCT" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="NEW_VALUE_GROUP" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="NEW_VALUE_PRODUCT" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>-->
+        <!--<table tableName="t_mall_order_pay_record" domainObjectName="trade.MallOrderPayRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_data_synchro" domainObjectName="sync.MallDataSynchro" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_order_log" domainObjectName="trade.MallOrderLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_fullcut" domainObjectName="sales.MallFullcut" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_prepay_card" domainObjectName="prepay.PrepayCard" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_prepay_card_batch" domainObjectName="prepay.PrepayCardBatch" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_prepay_card_log" domainObjectName="prepay.PrepayCardLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_prepay_card_plan_detail" domainObjectName="prepay.PrepayCardDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="t_mall_prepay_card_plan_log" domainObjectName="prepay.PrepayCardPlanLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distributor" domainObjectName="distribution.Distributor" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distributor_group" domainObjectName="distribution.DistributorGroup" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distributor_relation" domainObjectName="distribution.DistributorRelation" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distribution_invite" domainObjectName="distribution.DistributionInvite" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distribution_invite_log" domainObjectName="distribution.DistributionInviteLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distribution_order" domainObjectName="distribution.DistributionOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distribution_order_settle" domainObjectName="distribution.DistributionOrderSettle" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_share" domainObjectName="distribution.Share" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--        <table tableName="t_mall_qrcode" domainObjectName="qrcode.Qrcode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--        <table tableName="t_mall_qrcode_scan" domainObjectName="qrcode.QrcodeScan" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--        <table tableName="t_mall_qrcode_sub" domainObjectName="qrcode.QrcodeSub" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <table tableName="t_mall_customer_interaction" domainObjectName="customer.Interaction" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <!--<table tableName="t_mall_distribution_order" domainObjectName="distribution.DistributionOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+		<!--<table tableName="t_mall_distributor_item" domainObjectName="distribution.DistributorItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_distributor_item_detail" domainObjectName="distribution.DistributorItemDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--        <table tableName="t_mall_distribution_order_item" domainObjectName="distribution.DistributionOrderItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_distributor_group" domainObjectName="distribution.DistributorGroup" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+        <!--<table tableName="t_mall_customer_subscribe_message" domainObjectName="customer.SubscribeMessage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+		<!--<table tableName="t_mall_distribution_invite" domainObjectName="distribution.DistributionInvite" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+		<!--<table tableName="t_mall_distribution_order" domainObjectName="distribution.DistributionOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distribution_invite" domainObjectName="distribution.DistributionInvite" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+<!--		<table tableName="t_mall_distribution_order" domainObjectName="distribution.DistributionOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+		<table tableName="t_mall_detail_order" domainObjectName="trade.DetailOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="t_mall_detail_order_group" domainObjectName="trade.DetailOrderGroup" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table tableName="t_mall_detail_order_product" domainObjectName="trade.DetailOrderProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table tableName="t_mall_order_group_product_deliver" domainObjectName="trade.MallOrderGroupProductDeliver" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    </context>
+
+</generatorConfiguration>

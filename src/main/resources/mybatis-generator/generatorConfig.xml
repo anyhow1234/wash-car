@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动包位置-->
+    <classPathEntry location="/Users/hans/.m2/repository/mysql/mysql-connector-java/8.0.18/mysql-connector-java-8.0.18.jar" />
+    <!-- <classPathEntry location="C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar" />-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 实现自定义的代码生成器plugin -->
+        <plugin type="org.mybatis.generator.plugins.GenerateEntityPlugin" />
+        <!-- genenat entity时,生成toString -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <!-- generate entity时，生成hashcode和equals方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+        <!--<plugin type="org.mybatis.generator.plugins.PageLimitPlugin" />-->
+		<!-- genenat entity时,生成primarykey -->
+        <plugin type="org.mybatis.generator.plugins.PrimaryKeyPlugin" />
+		<!-- genenat entity时,生成bathInsert -->
+        <plugin type="org.mybatis.generator.plugins.BatchInsertPlugin" />
+        <!-- genenat entity时,生成bathUpdate -->
+        <plugin type="org.mybatis.generator.plugins.BatchUpdatePlugin" />
+        <!-- genenat entity时,生成bathDel -->
+        <plugin type="org.mybatis.generator.plugins.BatchDeletePlugin" />
+		<plugin type="org.mybatis.generator.plugins.UpdateByFiltersPlugin" />
+        <plugin type="org.mybatis.generator.plugins.DeleteByFiltersPlugin" />
+		<plugin type="org.mybatis.generator.plugins.UpdatePlusByFiltersPlugin" />
+        <plugin type="org.mybatis.generator.plugins.UpdatePlusByPrimaryKeyPlugin" />
+        <plugin type="org.mybatis.generator.plugins.UpdateSubtractByFiltersPlugin" />
+        <plugin type="org.mybatis.generator.plugins.UpdateSubtractByPrimaryKeyPlugin" />
+		<!--<plugin type="org.mybatis.generator.plugins.UpdateByFiltersPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.DeleteByFiltersPlugin" />-->
+		<!--<plugin type="org.mybatis.generator.plugins.UpdatePlusByFiltersPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.UpdatePlusByPrimaryKeyPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.UpdateSubtractByFiltersPlugin" />-->
+        <!--<plugin type="org.mybatis.generator.plugins.UpdateSubtractByPrimaryKeyPlugin" />-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/washcar" userId="root" password="123456">
+            <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" userId="msa" password="msa">-->
+            <property name="nullCatalogMeansCurrent" value="true" />
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.xiaozhu.washcar.entity" targetProject="../src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+            <property name="rewrite" value="true"></property>
+        </javaModelGenerator>
+        <!-- 生成的映射文件包名和位置 -->
+        <sqlMapGenerator targetPackage="autogenerate" targetProject="../src/main/resources/mapper">
+            <property name="enableSubPackages" value="true" />
+            <property name="mergeable" value="false"></property>
+            <property name="rewrite" value="true"></property>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhu.washcar.dao" targetProject="../src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="rewrite" value="false"></property>
+        </javaClientGenerator>
+		<javaServiceGenerator targetPackage="com.xiaozhu.washcar.iservice" targetProject="../src/main/java"
+                              implementationPackage="com.xiaozhu.washcar.service">
+        </javaServiceGenerator>
+        <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+		<table tableName="customer" domainObjectName="customer.Customer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    </context>
+
+</generatorConfiguration>
